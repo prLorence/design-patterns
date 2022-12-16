@@ -1,0 +1,6 @@
+namespace strategy
+{
+  class Strategy {
+
+  }
+}

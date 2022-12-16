@@ -1,0 +1,15 @@
+C:\github-reposw\personal\design_patterns\bin\Debug\net6.0\design_patterns.exe
+C:\github-reposw\personal\design_patterns\bin\Debug\net6.0\design_patterns.deps.json
+C:\github-reposw\personal\design_patterns\bin\Debug\net6.0\design_patterns.runtimeconfig.json
+C:\github-reposw\personal\design_patterns\bin\Debug\net6.0\design_patterns.dll
+C:\github-reposw\personal\design_patterns\bin\Debug\net6.0\design_patterns.pdb
+C:\github-reposw\personal\design_patterns\obj\Debug\net6.0\design_patterns.csproj.AssemblyReference.cache
+C:\github-reposw\personal\design_patterns\obj\Debug\net6.0\design_patterns.GeneratedMSBuildEditorConfig.editorconfig
+C:\github-reposw\personal\design_patterns\obj\Debug\net6.0\design_patterns.AssemblyInfoInputs.cache
+C:\github-reposw\personal\design_patterns\obj\Debug\net6.0\design_patterns.AssemblyInfo.cs
+C:\github-reposw\personal\design_patterns\obj\Debug\net6.0\design_patterns.csproj.CoreCompileInputs.cache
+C:\github-reposw\personal\design_patterns\obj\Debug\net6.0\design_patterns.dll
+C:\github-reposw\personal\design_patterns\obj\Debug\net6.0\refint\design_patterns.dll
+C:\github-reposw\personal\design_patterns\obj\Debug\net6.0\design_patterns.pdb
+C:\github-reposw\personal\design_patterns\obj\Debug\net6.0\design_patterns.genruntimeconfig.cache
+C:\github-reposw\personal\design_patterns\obj\Debug\net6.0\ref\design_patterns.dll
