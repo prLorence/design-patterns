@@ -1,25 +1,21 @@
 // ! no abstract methods thats why c# is not complaining to implement abstract methods.
 
+using factory.ingredients;
+
 namespace factory.pizzas
 {
   public abstract class Pizza
   {
-    protected String name;
-    protected String dough;
-    protected String sauce;
-    protected List<String> toppings = new List<String>();
+    protected IDough dough;
+    protected ISauce sauce;
+    protected ICheese cheese;
+    protected IPepperoni pepperoni;
+    protected IClam clam;
+    // protected Veggies[] veggies;
 
-    public void prepare() 
-    {
-      System.Console.WriteLine("Preparing: {0}", name);
-      System.Console.WriteLine("Tossing dough...");
-      System.Console.WriteLine("Adding sauce...");
-      System.Console.WriteLine("Adding toppings...");
-      foreach (String topping in toppings)
-      {
-        System.Console.WriteLine("      {0}", topping);
-      }
-    }
+    protected String name;
+
+    public abstract void prepare();
 
     public void bake()
     {

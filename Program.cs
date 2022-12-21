@@ -11,8 +11,8 @@ using decorator.beverages;
 using decorator.condiments;
 
 using factory;
-using factory.pizza_stores;
 using factory.pizzas;
+using factory.ingredient_factory;
 
 namespace design_patterns
 {
@@ -56,14 +56,18 @@ namespace design_patterns
       // System.Console.WriteLine("{0} ${1}", beverage3.getDescription(), beverage3.cost());
 
       // Factory Pattern
-      PizzaStore nyStore = new NYPizzaStore();
-      PizzaStore chicagoStore = new ChicagoPizzaStore();
+      // PizzaStore nyStore = new NYPizzaStore();
+      // PizzaStore chicagoStore = new ChicagoPizzaStore();
 
-      Pizza pizza = nyStore.orderPizza("cheese");
-      System.Console.WriteLine("Paul ordered a {0}\n", pizza.getName());
+      // Pizza pizza = nyStore.orderPizza("cheese");
+      // System.Console.WriteLine("Paul ordered a {0}\n", pizza.getName());
 
-      pizza = chicagoStore.orderPizza("cheese");
-      System.Console.WriteLine("Paul ordered a {0}\n", pizza.getName());
+      // pizza = chicagoStore.orderPizza("cheese");
+      // System.Console.WriteLine("Paul ordered a {0}\n", pizza.getName());
+
+      IPizzaIngredientFactory pizzaFactory = new NYPizzaIngredientFactory();
+      CheesePizza cheesePizza = new CheesePizza(pizzaFactory);
+      cheesePizza.prepare();
     }
   }
 }
