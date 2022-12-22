@@ -66,8 +66,12 @@ namespace design_patterns
       // System.Console.WriteLine("Paul ordered a {0}\n", pizza.getName());
 
       IPizzaIngredientFactory pizzaFactory = new NYPizzaIngredientFactory();
-      CheesePizza cheesePizza = new CheesePizza(pizzaFactory);
-      cheesePizza.prepare();
+      IPizzaIngredientFactory chicagoFactory = new ChicagoPizzaIngredientFactory();
+      CheesePizza nyCheesePizza = new CheesePizza(pizzaFactory);
+      CheesePizza chCheesePizza = new CheesePizza(chicagoFactory);
+      nyCheesePizza.prepare();
+      chCheesePizza.prepare();
+
     }
   }
 }

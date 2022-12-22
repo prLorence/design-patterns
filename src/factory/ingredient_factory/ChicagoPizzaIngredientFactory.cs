@@ -12,27 +12,38 @@ namespace factory.ingredient_factory
   {
     public ICheese createCheese()
     {
-      return new MozarellaCheese();
+      ICheese mozzarella = new MozarellaCheese();
+      mozzarella.getCheese();
+      return mozzarella;
     }
 
     public IClam createClam()
     {
-      return new FrozenClams();
+      
+      IClam frozenCLams = new FrozenClams();
+      frozenCLams.getClams();
+      return frozenCLams;
     }
 
     public IDough createDough()
     {
-      return new ThickCrustDough();
+      IDough thickDough = new ThickCrustDough();
+      thickDough.getDough();
+      return thickDough;
     }
 
     public IPepperoni createPepperoni()
     {
-      return new SlicedPepperoni();
+      IPepperoni pepperoni = new SlicedPepperoni();
+      pepperoni.getPepperoni();
+      return pepperoni;
     }
 
     public ISauce createSauce()
     {
-      return new PlumTomatoSauce();
+      ISauce sauce = new PlumTomatoSauce();
+      sauce.getSauce();
+      return sauce;
     }
 
     // public Veggies[] createVeggies()
