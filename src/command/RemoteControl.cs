@@ -1,3 +1,4 @@
+using System.Text;
 using command.commands;
 
 namespace command
@@ -35,6 +36,19 @@ namespace command
     public void offButtonPress(int slot)
     {
       offCommands[slot].execute();
+    }
+
+    public String toString()
+    {
+      StringBuilder stringBuff = new StringBuilder();
+      stringBuff.Append("\n------- Remote Control -------\n");
+      for (int i = 0; i < onCommands.Length; i++)
+      {
+        stringBuff.Append(
+          String.Format("[Slot {0}]\t{1}\t\t\t{2}\n", i, onCommands[i].GetType().Name, offCommands[i].GetType().Name)
+        );
+      }
+      return stringBuff.ToString(); 
     }
   }
 }

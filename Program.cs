@@ -16,6 +16,9 @@ using factory.ingredient_factory;
 
 using command;
 using command.commands;
+using command.commands.items;
+using command.commands.on;
+using command.commands.off;
 
 namespace design_patterns
 {
@@ -78,15 +81,26 @@ namespace design_patterns
       // ! Command Pattern     
       RemoteControl remote = new RemoteControl();
       Light light = new Light();
-      Garage garage = new Garage();
+
       LightOn lightOn = new LightOn(light);
+      LightOff lightOff = new LightOff(light);
+
+      Garage garage = new Garage();
+
       OpenGarageDoor openGarage = new OpenGarageDoor(garage);
+      CloseGarageDoor closeGarage = new CloseGarageDoor(garage);
 
+      remote.setCommand(0, lightOn, lightOff);
+      remote.setCommand(1, openGarage, closeGarage);
 
-      remote.setCommand(lightOn);
-      remote.buttonPress();
-      remote.setCommand(openGarage);
-      remote.buttonPress();
+      System.Console.WriteLine(remote.toString());
+      remote.onButtonPress(0);
+      remote.onButtonPress(1);
+
+      remote.offButtonPress(0);
+      remote.offButtonPress(1);
+      // remote.setCommand(openGarage);
+      // remote.buttonPress();
     }
   }
 }
