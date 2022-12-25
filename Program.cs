@@ -14,13 +14,16 @@ using factory;
 using factory.pizzas;
 using factory.ingredient_factory;
 
+using command;
+using command.commands;
+
 namespace design_patterns
 {
   class Program 
   {
     static  void Main(string[] args) 
     {
-      // Strategy Pattern
+      // ! Strategy Pattern
       // Duck mallard = new MallardDuck();
       // mallard.performFly();
       // mallard.performQuack();
@@ -31,7 +34,7 @@ namespace design_patterns
       // model.performFly();
       // model.performQuack();
 
-      // Observer Pattern
+      // ! Observer Pattern
       // WeatherData weatherData = new WeatherData();
       // CurrentConditionsDisplay currentDisplay = new CurrentConditionsDisplay(weatherData);
       
@@ -39,7 +42,7 @@ namespace design_patterns
       // weatherData.setMeasurements(82, 70, 29.2f);
       // weatherData.setMeasurements(78, 90, 29.2f);
 
-      // Decorator Pattern
+      // ! Decorator Pattern
       // Beverage beverage = new Espresso();
       // System.Console.WriteLine("{0} ${1}", beverage.getDescription(), beverage.cost());
 
@@ -55,7 +58,7 @@ namespace design_patterns
       // beverage3 = new Whip(beverage3);
       // System.Console.WriteLine("{0} ${1}", beverage3.getDescription(), beverage3.cost());
 
-      // Factory Pattern
+      // ! Factory Pattern
       // PizzaStore nyStore = new NYPizzaStore();
       // PizzaStore chicagoStore = new ChicagoPizzaStore();
 
@@ -65,13 +68,25 @@ namespace design_patterns
       // pizza = chicagoStore.orderPizza("cheese");
       // System.Console.WriteLine("Paul ordered a {0}\n", pizza.getName());
 
-      IPizzaIngredientFactory pizzaFactory = new NYPizzaIngredientFactory();
-      IPizzaIngredientFactory chicagoFactory = new ChicagoPizzaIngredientFactory();
-      CheesePizza nyCheesePizza = new CheesePizza(pizzaFactory);
-      CheesePizza chCheesePizza = new CheesePizza(chicagoFactory);
-      nyCheesePizza.prepare();
-      chCheesePizza.prepare();
+      // IPizzaIngredientFactory pizzaFactory = new NYPizzaIngredientFactory();
+      // IPizzaIngredientFactory chicagoFactory = new ChicagoPizzaIngredientFactory();
+      // CheesePizza nyCheesePizza = new CheesePizza(pizzaFactory);
+      // CheesePizza chCheesePizza = new CheesePizza(chicagoFactory);
+      // nyCheesePizza.prepare();
+      // chCheesePizza.prepare();
 
+      // ! Command Pattern     
+      RemoteControl remote = new RemoteControl();
+      Light light = new Light();
+      Garage garage = new Garage();
+      LightOn lightOn = new LightOn(light);
+      OpenGarageDoor openGarage = new OpenGarageDoor(garage);
+
+
+      remote.setCommand(lightOn);
+      remote.buttonPress();
+      remote.setCommand(openGarage);
+      remote.buttonPress();
     }
   }
 }
