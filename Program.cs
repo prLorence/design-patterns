@@ -1,8 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using strategy;
-using strategy.ducks;
-using strategy.strategies.fly;
+// using strategy;
+// using strategy.ducks;
+// using strategy.strategies.fly;
 
 using observer.classes;
 
@@ -19,6 +19,9 @@ using command.commands;
 using command.commands.items;
 using command.commands.on;
 using command.commands.off;
+using adapter.duck;
+using adapter.turkey;
+using adapter;
 
 namespace design_patterns
 {
@@ -79,28 +82,46 @@ namespace design_patterns
       // chCheesePizza.prepare();
 
       // ! Command Pattern     
-      RemoteControl remote = new RemoteControl();
-      Light light = new Light();
+      // RemoteControl remote = new RemoteControl();
+      // Light light = new Light();
 
-      LightOn lightOn = new LightOn(light);
-      LightOff lightOff = new LightOff(light);
+      // LightOn lightOn = new LightOn(light);
+      // LightOff lightOff = new LightOff(light);
 
-      Garage garage = new Garage();
+      // Garage garage = new Garage();
 
-      OpenGarageDoor openGarage = new OpenGarageDoor(garage);
-      CloseGarageDoor closeGarage = new CloseGarageDoor(garage);
+      // OpenGarageDoor openGarage = new OpenGarageDoor(garage);
+      // CloseGarageDoor closeGarage = new CloseGarageDoor(garage);
 
-      remote.setCommand(0, lightOn, lightOff);
-      remote.setCommand(1, openGarage, closeGarage);
+      // remote.setCommand(0, lightOn, lightOff);
+      // remote.setCommand(1, openGarage, closeGarage);
 
-      System.Console.WriteLine(remote.toString());
-      remote.onButtonPress(0);
-      remote.onButtonPress(1);
+      // System.Console.WriteLine(remote.toString());
+      // remote.onButtonPress(0);
+      // remote.onButtonPress(1);
 
-      remote.offButtonPress(0);
-      remote.offButtonPress(1);
+      // remote.offButtonPress(0);
+      // remote.offButtonPress(1);
       // remote.setCommand(openGarage);
       // remote.buttonPress();
+
+      // ! Adapter Pattern
+      IDuck duck = new MallardDuck();
+      ITurkey turkey = new WildTurkey();
+
+      IDuck turkeyAdapter = new TurkeyAdapter(turkey);
+
+      System.Console.WriteLine("Turkey says...");
+      turkey.gobble();
+      turkey.fly();
+      
+      System.Console.WriteLine("\nDuck says...");
+      duck.quack();
+      duck.fly();
+
+      System.Console.WriteLine("\nThe turkey adapter says...");
+      turkeyAdapter.quack();
+      turkeyAdapter.fly();
     }
   }
 }
