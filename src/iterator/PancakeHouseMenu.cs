@@ -1,3 +1,5 @@
+using System.Collections;
+
 namespace iterator
 {
   public class PancakeHouseMenu
@@ -38,7 +40,7 @@ namespace iterator
       menuItems.Add(menuItem);
     }
 
-    public List<MenuItem>.Enumerator createIterator()
+    public IEnumerator createIterator()
     {
       return menuItems.GetEnumerator();
     }

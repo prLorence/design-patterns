@@ -15,7 +15,7 @@ namespace iterator
 
     public void printMenu()
     {
-      List<MenuItem>.Enumerator pancakeIterator = pancakeHouseMenu.createIterator();
+      IEnumerator pancakeIterator = pancakeHouseMenu.createIterator();
       IEnumerator dinerIterator = dinerMenu.createIterator();
 
       System.Console.WriteLine("MENU\n--\nBREAKFAST");
@@ -25,22 +25,11 @@ namespace iterator
 
     }
 
-    private void printMenu(List<MenuItem>.Enumerator iterator)
-    {
-      while (iterator.MoveNext())
-      {
-        MenuItem menuItem = iterator.Current;
-        System.Console.Write(menuItem.Name + ", ");
-        System.Console.Write(menuItem.Price + " -- ");
-        System.Console.WriteLine(menuItem.Description);
-      }
-    }
-
     private void printMenu(IEnumerator iterator)
     {
       while (iterator.MoveNext())
       {
-        MenuItem menuItem = (MenuItem) iterator.Current;
+        MenuItem menuItem = (MenuItem)iterator.Current;
         System.Console.Write(menuItem?.Name + ", ");
         System.Console.Write(menuItem?.Price + " -- ");
         System.Console.WriteLine(menuItem?.Description);
