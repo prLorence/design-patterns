@@ -19,9 +19,14 @@ using command.commands;
 using command.commands.items;
 using command.commands.on;
 using command.commands.off;
+
 using adapter.duck;
 using adapter.turkey;
 using adapter;
+
+using iterator;
+
+
 
 namespace design_patterns
 {
@@ -106,22 +111,31 @@ namespace design_patterns
       // remote.buttonPress();
 
       // ! Adapter Pattern
-      IDuck duck = new MallardDuck();
-      ITurkey turkey = new WildTurkey();
+      // IDuck duck = new MallardDuck();
+      // ITurkey turkey = new WildTurkey();
 
-      IDuck turkeyAdapter = new TurkeyAdapter(turkey);
+      // IDuck turkeyAdapter = new TurkeyAdapter(turkey);
 
-      System.Console.WriteLine("Turkey says...");
-      turkey.gobble();
-      turkey.fly();
+      // System.Console.WriteLine("Turkey says...");
+      // turkey.gobble();
+      // turkey.fly();
       
-      System.Console.WriteLine("\nDuck says...");
-      duck.quack();
-      duck.fly();
+      // System.Console.WriteLine("\nDuck says...");
+      // duck.quack();
+      // duck.fly();
 
-      System.Console.WriteLine("\nThe turkey adapter says...");
-      turkeyAdapter.quack();
-      turkeyAdapter.fly();
+      // System.Console.WriteLine("\nThe turkey adapter says...");
+      // turkeyAdapter.quack();
+      // turkeyAdapter.fly();
+
+      PancakeHouseMenu pancakeHouseMenu = new PancakeHouseMenu();
+      DinerMenu dinerMenu = new DinerMenu();
+
+      Waitress waitress = new Waitress(pancakeHouseMenu, dinerMenu);
+
+      waitress.printMenu();
+
+      
     }
   }
 }
