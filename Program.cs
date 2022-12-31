@@ -26,7 +26,7 @@ using adapter;
 
 using iterator;
 
-
+using composite;
 
 namespace design_patterns
 {
@@ -128,12 +128,26 @@ namespace design_patterns
       // turkeyAdapter.quack();
       // turkeyAdapter.fly();
 
-      PancakeHouseMenu pancakeHouseMenu = new PancakeHouseMenu();
-      DinerMenu dinerMenu = new DinerMenu();
+      // ! Iterator Pattern 
+      // PancakeHouseMenu pancakeHouseMenu = new PancakeHouseMenu();
+      // DinerMenu dinerMenu = new DinerMenu();
 
-      Waitress waitress = new Waitress(pancakeHouseMenu, dinerMenu);
+      // Waitress waitress = new Waitress(pancakeHouseMenu, dinerMenu);
 
-      waitress.printMenu();
+      // waitress.printMenu();
+
+      // ! Composite Pattern
+      MenuComponent pancakeHouseMenu = new Menu("PANCAKE HOUSE MENU", "Breakfast");
+      MenuComponent dinerMenu = new Menu("DINER MENU", "Lunch");
+      MenuComponent cafeMenu = new Menu("CAFE MENU", "Dinner");
+      MenuComponent dessertMenu = new Menu("DESSERT MENU", "Dessert of course!");
+
+      MenuComponent allMenus = new Menu("ALL MENUS", "All menus combined!");
+
+      allMenus.add(pancakeHouseMenu);
+      allMenus.add(dinerMenu);
+      allMenus.add(cafeMenu);
+
 
       
     }
