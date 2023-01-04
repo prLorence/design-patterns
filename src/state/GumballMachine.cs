@@ -12,13 +12,17 @@ namespace state
     IState state;
     int count = 0;
 
-    public GumballMachine(int numberGumballs)
+    // proxy pattern instance variables
+    String location;
+
+    public GumballMachine(String location, int numberGumballs)
     {
         soldOutState = new SoldOutState(this);
         noQuarterState = new NoQuarterState(this);
         hasQuarterState = new HasQuarterState(this);
         soldState = new SoldState(this);
 
+        this.location = location;
         this.count = numberGumballs;
 
         if (numberGumballs > 0)
@@ -73,6 +77,12 @@ namespace state
     public IState getNoQuarterState() {
         return noQuarterState;
     }
+    
+    public String getLocation()
+    {
+        return location;
+    }
+
 
     public IState getHasQuarterState() {
         return hasQuarterState;
